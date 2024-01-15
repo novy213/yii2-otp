@@ -1,5 +1,5 @@
 {
-  "name": "sam002/yii2-otp",
+  "name": "novy213/yii2-otp",
 
   "type": "yii2-extension",
 
@@ -25,7 +25,8 @@
     }
   ],
   "require": {
-    "spomky-labs/otphp": "^8.3",
+    "php": ">=8.1",
+    "spomky-labs/otphp": "^11.3",
     "2amigos/qrcode-library" : "^1.1.0"
   },
   "require-dev": {
@@ -36,7 +37,7 @@
   },
   "autoload": {
     "psr-4": {
-      "sam002\\otp\\": "src"
+      "novy213\\otp\\": "src"
     }
   }
 }
