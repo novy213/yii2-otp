@@ -21,8 +21,8 @@ use yii\validators\UrlValidator;
  * ~~~
  *  'components' => [
  *      'otp' => [
- *          'class' => 'sam002\otp\Otp',
- *          'algorithm' => sam002\otp\Otp::ALGORITHM_TOTP
+ *          'class' => 'novy213\otp\Otp',
+ *          'algorithm' => novy213\otp\Otp::ALGORITHM_TOTP
  *          'digits' => 6,
  *          'digest' => 'sha256',
  *          'issuer' => 'sam002',
@@ -35,7 +35,7 @@ use yii\validators\UrlValidator;
  * ~~~
  *
  * @author Semen Dubina <sam@sam002.net>
- * @package sam002\otp
+ * @package novy213\otp
  */
 class Otp extends Component
 {
