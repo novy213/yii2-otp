@@ -5,10 +5,10 @@
  * Time: 15:34
  */
 
-namespace sam002\otp\behaviors;
+namespace novy213\otp\behaviors;
 
 use Yii;
-use sam002\otp\Otp;
+use novy213\otp\Otp;
 use yii\base\Behavior;
 use yii\db\BaseActiveRecord;
 
@@ -32,8 +32,8 @@ use yii\db\BaseActiveRecord;
  * ```
  *
  * @see https://en.wikipedia.org/wiki/Two-factor_authentication
- * @author sam002
- * @package sam002\otp
+ * @author novy213
+ * @package novy213\otp
  */
 class OtpBehavior extends Behavior
 {
