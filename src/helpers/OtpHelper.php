@@ -5,7 +5,7 @@
  * Time: 23:06
  */
 
-namespace sam002\otp\helpers;
+namespace novy213\otp\helpers;
 
 use ParagonIE\ConstantTime\Base32;
 use yii\base\Security;
