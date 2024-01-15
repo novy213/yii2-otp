@@ -5,10 +5,10 @@
  * Time: 15:24
  */
 
-namespace sam002\otp;
+namespace novy213\otp;
 
 use ParagonIE\ConstantTime\Base32;
-use sam002\otp\helpers\OtpHelper;
+use novy213\otp\helpers\OtpHelper;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\validators\UrlValidator;
