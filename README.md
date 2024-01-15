@@ -18,12 +18,12 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require sam002/yii2-otp:~2.0.0
+composer require novy213/yii2-otp:~2.0.0
 ```
 or add
 
 ```json
-"sam002/yii2-otp" : "~2.0.0"
+"novy213/yii2-otp" : "~2.0.0"
 ```
 
 to the require section of your application's `composer.json` file.
@@ -38,7 +38,7 @@ After extension is installed you need to setup auth client collection applicatio
 
 ```php
 <?php
-use sam002\otp\Otp;
+use novy213\otp\Otp;
 
 ...
 
@@ -46,7 +46,7 @@ use sam002\otp\Otp;
     'otp' => [
         'class' => Otp::className(),
         // 'totp' only now
-        'algorithm' => sam002\otp\Otp::ALGORITHM_TOTP,
+        'algorithm' => novy213\otp\Otp::ALGORITHM_TOTP,
         
         // length of code
         'digits' => 6,
@@ -74,7 +74,7 @@ Add any model column for storing secure code. //My case: the use of two-factor a
 
 ```php
 <?php
-use sam002\otp\behaviors\OtpBehavior;
+use novy213\otp\behaviors\OtpBehavior;
 
 ...
 
@@ -101,7 +101,7 @@ Widget for generate init QR-code.
 Read more about QrParams in the [qrcode-library](https://github.com/2amigos/qrcode-library).
 
 ```php
-use sam002\otp\widgets\OtpInit;
+use novy213\otp\widgets\OtpInit;
 
 <?php echo $form->field($model, 'secret')->widget(
                     OtpInit::className() ,[
