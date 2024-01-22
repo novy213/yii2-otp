@@ -102,10 +102,11 @@ class Otp extends Component
     public function init()
     {
         parent::init();
+        $helper = new OtpHelper();
         if ($this->algorithm === self::ALGORITHM_TOTP) {
-            $this->otp = OtpHelper::getTotp($this->label, $this->digits, $this->digest, $this->interval, $this->issuer);
+            $this->otp = $helper->getTotp($this->label, $this->digits, $this->digest, $this->interval, $this->issuer);
         } elseif ($this->algorithm === self::ALGORITHM_HOTP) {
-            $this->otp = OtpHelper::getHotp($this->label, $this->digits, $this->digest, $this->counter, $this->issuer);
+            $this->otp = $helper->getHotp($this->label, $this->digits, $this->digest, $this->counter, $this->issuer);
         } else {
             throw new InvalidConfigException('otp::$algorithm = \"' . $this->algorithm . '\" not allowed, only Otp::ALGORITHM_TOTP or Otp::ALGORITHM_HOTP');
         }
@@ -135,11 +136,12 @@ class Otp extends Component
      */
     public function getSecret()
     {
+        $helper = new OtpHelper();
         if (!is_numeric($this->secretLength) || $this->secretLength < self::SECRET_LENGTH_MIN || $this->secretLength > self::SECRET_LENGTH_MAX) {
             throw new InvalidConfigException('otp::$length only integer, min='. self::SECRET_LENGTH_MIN .'and max=' . self::SECRET_LENGTH_MAX);
         }
         if (empty($this->secret)) {
-            $this->secret = OtpHelper::generateSecret($this->secretLength);
+            $this->secret = $helper->generateSecret($this->secretLength);
         }
         return $this->secret;
     }
