@@ -34,9 +34,9 @@ class OtpHelper
      * @param string $issuer
      * @return TOTP
      */
-    public static function getTotp($label = '', $digits = 6, $digest = 'sha1', $interval = 30, $issuer='')
+    public function getTotp($label = '', $digits = 6, $digest = 'sha1', $interval = 30, $issuer='')
     {
-        $totp = new TOTP($label, null, $interval, $digest, $digits);
+        $totp = TOTP::create($this->generateSecret(), 30, $digest, $digits, 30);
         if(!empty($issuer)) {
             $totp->setIssuer($issuer);
         }
@@ -52,9 +52,9 @@ class OtpHelper
      * @param string $issuer
      * @return HOTP
      */
-    public static function getHotp($label = '', $digits = 6, $digest = 'sha1', $counter = 0, $issuer='')
+    public function getHotp($label = '', $digits = 6, $digest = 'sha1', $counter = 0, $issuer='')
     {
-        $hotp = new HOTP($label, null, $counter, $digest, $digits);
+        $hotp = HOTP::create($this->generateSecret(), $counter, $digest, $digits);
         if(!empty($issuer)) {
             $hotp->setIssuer($issuer);
         }
